@@ -1,19 +1,19 @@
 *{
     padding: 0;
     margin: 0;
-    color: #eee;
+    color: #F2E29F;
     text-align: center;
 }
 
 html, body{
-    background-color: blue;
+    background-color:#624E04;
 }
 
 .main-container{
     border: 5px solid rgb(209, 11, 93);
     border-radius: 10px;
     margin: 2rem;
-    background-color: #f315d5;
+    background-color: #D9B26F;
 
 }
 
@@ -32,5 +32,5 @@ aside, article{
 }
 
 nav, section, footer{
-    background-color: rgb(107, 107, 10);
+    background-color: #A69658;
 }
