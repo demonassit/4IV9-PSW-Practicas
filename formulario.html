@@ -10,8 +10,8 @@
 </head>
 <body>
 
-    <form method="GET" name="formulario"
-     action="formulario.html">
+    <form method="get" name="formulario"
+     action="formulario.html" onsubmit="return validar(this)" >
      Nombre:
      <br>
      <input type="text" name="nombre" size="20">
@@ -30,6 +30,8 @@
      <input type="reset" value="Borrar" name="borrar">
 
     </form>
+    <br>
+    <a href="index.html" >Regresar al menu principal</a>
     
 </body>
 </html>
