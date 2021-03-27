@@ -19,12 +19,12 @@
             <tr>
                 <td class="td_up" >Introduce la cantidad a invertir</td>
                 <td class="td_down" ><input type="text" name="cantidad"
-                    onkeypress=""></td>
+                    onkeypress="return validarn(event)"></td>
             </tr>
             <tr>
                 <td></td>
                 <td class="td_down" > <input type="button" name="enviar"
-                    value="Interes" onclick=""> </td>
+                    value="Interes" onclick="interes()"> </td>
             </tr>
             <tr>
                 <td class="td_up" >Su saldo total con interes del 2% es de:</td>
@@ -33,11 +33,14 @@
             </tr>
             <tr>
                 <td></td>
-                <td class="td_down" ><input type="button" name="borrar" value="Borrar"
-                    onclick=""></td>
+                <td class="td_down" ><input type="button" name="borrard" 
+                    value="Borrar"
+                    onclick="borrar()"></td>
             </tr>
         </table>
     </form>
+    <br>
+    <a href="formulario.html">Regresar al Formulario Principal</a>
     
 </body>
 </html>
