@@ -18,7 +18,7 @@ function init(){
 }
 
 function iniciarContador(){
-    if(verificar == false){
+    if(verificador == false){
         intervalo = setInterval(function (){
             tiempo += 0.01;
             temporizador.innerHTML = tiempo.toFixed(2);
