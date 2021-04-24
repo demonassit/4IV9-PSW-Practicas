@@ -39,6 +39,32 @@ and open the template in the editor.
                     <input type="reset" value="Borrar Datos" > 
                 </form>
             </div>
+                <br>
+            <div class="contenedorConsultar" >
+                <br>
+                <form name="formularioConsultar" method="get" action="Consultar">
+                    <input type="submit" value="Consultar Tabla General de Usuarios" >
+                </form>
+            </div>
+                <br>
+                <div class="contenedorEliminar" >
+                    <br>
+                <form name="formularioEliminar" method="post" action="Eliminar">
+                    <label>Ingresa el ID del usuario a eliminar</label>
+                    <input type="text" name="ideliminar" >
+                    <input type="submit" value="Eliminar Registro" >
+                </form>
+                </div>
+                <br>
+                <div class="contenedorActualizar" >
+                    <label>Quiero que programen la funcion que se encargue de poder realizar
+                    una actualizacion a los datos de un usuario puede ser cualquiera de los
+                    siguientes escenarios:
+                    nombre, appat, apmat, edad, correo o todos
+                    por ejemplo:
+                    UPDATE registro4iv9 SET apmat = variable1 where id_usu = variable2
+                    </label>
+                </div>
         </div>
     </body>
 </html>

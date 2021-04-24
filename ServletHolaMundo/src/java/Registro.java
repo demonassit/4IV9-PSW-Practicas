@@ -147,9 +147,12 @@ public class Registro extends HttpServlet {
                     + "Puerto Remoto: "+puertor
                     + "<br>");
             out.println("<h1>Registro Exitoso</h1>"
-                    + "<a href='index.html' >Regresar al Menu Principal</a>");
+                    + "<a href='index.html' >Regresar al Menu Principal</a>"
+                    + "<br>"
+                    + "<a href='Consultar' >Consultar Tabla General de Usuarios</a>");
             out.println("</body>");
             out.println("</html>");
+            set.close();
             
             }catch(Exception e){
                 System.out.println("Error al registrar en la tabla");
@@ -164,7 +167,9 @@ public class Registro extends HttpServlet {
             out.println("<body>"
             + "<br>");
             out.println("<h1>Registro No Exitoso, ocurrio un error</h1>"
-                    + "<a href='index.html' >Regresar al Menu Principal</a>");
+                    + "<a href='index.html' >Regresar al Menu Principal</a>"
+                    + "<br>"
+                    + "<a href='Consultar' >Consultar Tabla General de Usuarios</a>");
             out.println("</body>");
             out.println("</html>");
                     
@@ -206,6 +211,15 @@ public class Registro extends HttpServlet {
      *
      * @return a String containing servlet description
      */
+    
+    public void destroy(){
+        try{
+            con.close();
+        }catch(Exception e){
+            super.destroy();
+        }
+    }    
+    
     @Override
     public String getServletInfo() {
         return "Short description";
