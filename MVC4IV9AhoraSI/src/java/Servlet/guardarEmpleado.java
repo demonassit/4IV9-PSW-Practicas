@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Servlet;
 
 import Control.AccionesEmpleado;
-import Control.Empleado;
+import Modelo.Empleado;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author demon
  */
-public class actualizarempleado extends HttpServlet {
+public class guardarEmpleado extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,32 +33,31 @@ public class actualizarempleado extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+            /* TODO output your page here. You may use following sample code. */
             String nom, pass, email, pais;
-            int id;
             
-            id = Integer.parseInt(request.getParameter("id2"));
-            nom = request.getParameter("nombre2");
-            pass = request.getParameter("password2");
-            email = request.getParameter("email2");
-            pais = request.getParameter("pais2");
+            nom = request.getParameter("nombre");
+            pass = request.getParameter("password");
+            email = request.getParameter("email");
+            pais = request.getParameter("pais");
             
             Empleado e = new Empleado();
             
-            e.setId(id);
             e.setNombre(nom);
             e.setPassword(pass);
             e.setEmail(email);
             e.setPais(pais);
             
-            int estatus = AccionesEmpleado.ActualizarEmpleado(e);
+            
+            int estatus = AccionesEmpleado.registrarEmpleado(e);
+            
             
             if(estatus > 0){
-                response.sendRedirect("ConsultarEmpleados.jsp");
+                response.sendRedirect("registroEmpleados.jsp");
             }else{
                 response.sendRedirect("error.jsp");
-            
             }
+            
         }
     }
 

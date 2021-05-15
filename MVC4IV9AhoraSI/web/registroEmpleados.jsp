@@ -1,6 +1,6 @@
 <%-- 
-    Document   : empleadosguardados
-    Created on : 13/05/2021, 05:31:25 PM
+    Document   : registroEmpleados
+    Created on : 14/05/2021, 06:19:23 PM
     Author     : demon
 --%>
 
@@ -12,7 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Empleado Guardado con Exito</h1>
-        <a href="index.html" >Regresar al Menu Principal</a>  
+        <h1>Registro de Empleado Exitoso</h1>
+        <br>
+        <a href="index.html" >Regresar al Menu Principal</a>
     </body>
 </html>
