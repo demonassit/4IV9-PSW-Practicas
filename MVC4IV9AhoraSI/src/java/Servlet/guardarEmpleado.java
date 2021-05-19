@@ -9,10 +9,13 @@ import Control.AccionesEmpleado;
 import Modelo.Empleado;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,6 +37,50 @@ public class guardarEmpleado extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
+            /*
+            
+            Generar la sesion del usuario
+            
+            */
+            
+            HttpSession sesionCli = request.getSession(true);
+            
+            String idsesion = sesionCli.getId();
+            
+            long fechacreacion = sesionCli.getCreationTime();
+            
+            long fechaultimoacceso = sesionCli.getLastAccessedTime();
+            
+            //vamos a generar "cookie" de la sesion
+            
+            Integer cuenta = (Integer)sesionCli.getAttribute("cuenta.ss");
+            
+            if(cuenta == null){
+                cuenta = new Integer(1);
+            }else{
+                cuenta = new Integer(cuenta.intValue()+1);
+            }
+            
+            sesionCli.setAttribute("cuenta.ss", cuenta);
+            
+            //vamos a imprimir los valores de la sesion
+            
+            System.out.println("Id Sesion: "+idsesion);
+            System.out.println("Fecha en que fue creada: " + new Date(fechacreacion).toString());
+            System.out.println("Fecha de ultimo acceso: "+ new Date(fechaultimoacceso).toString());
+            
+            //vamos a visualizar los parametros del hasmap
+            
+            Enumeration parametrosSesion = sesionCli.getAttributeNames();
+            
+            while(parametrosSesion.hasMoreElements()){
+                String parametros = (String)parametrosSesion.nextElement();
+                Object valor = sesionCli.getAttribute(parametros);
+                System.out.println("El parametro es: " +parametros 
+                                    + "Su valor es: " +valor.toString());
+            }
+            
             String nom, pass, email, pais;
             
             nom = request.getParameter("nombre");

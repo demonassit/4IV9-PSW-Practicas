@@ -4,7 +4,7 @@
     Author     : demon
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +14,23 @@
     <body>
         <h1>Registro de Empleado Exitoso</h1>
         <br>
+        <%
+            HttpSession sesionCliente = request.getSession();
+            
+            /*
+            Si yo tuviera que consultar de la bd
+            
+            VerificarUsuario(String user, String pass)
+            
+            Un objeto empleado
+            */
+                                     //parametro //e.nombre()  valor  
+            sesionCliente.setAttribute("Usuario", "Maria");
+            
+            //invalidate
+            %>
         <a href="index.html" >Regresar al Menu Principal</a>
+        <br>
+        Bienvenido: <% out.println(sesionCliente.getAttribute("Usuario")); %>
     </body>
 </html>
