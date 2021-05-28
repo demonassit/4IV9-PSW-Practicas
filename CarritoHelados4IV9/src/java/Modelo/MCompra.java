@@ -62,7 +62,7 @@ public class MCompra {
         return codigo;
     }
     
-    public boolean registrarCompra(MCompra compra, Vector<DCompra> listaproductos){
+    public boolean registrarCompra(MCompra compra, Vector<DCompra> listaproductos) throws ClassNotFoundException{
         boolean registro = false;
         Connection con = null;
         PreparedStatement ps = null;
